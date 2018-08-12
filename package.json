@@ -1,0 +1,27 @@
+{
+  "name": "edabit",
+  "version": "1.0.0",
+  "description": "",
+  "main": "absSum.js",
+  "directories": {
+    "test": "tests"
+  },
+  "dependencies": {
+    "jest": "^23.5.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dxnter/edabit.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dxnter/edabit/issues"
+  },
+  "homepage": "https://github.com/dxnter/edabit#readme"
+}
