@@ -8,41 +8,45 @@ const results = {
 };
 
 test('Should work with an album', () => {
-  expect(imgurUrlParser('http://imgur.com/a/cjh4E')).toBe(results.album);
+  expect(imgurUrlParser('http://imgur.com/a/cjh4E')).toEqual(results.album);
 });
 
 test('Should work with a gallery', () => {
-  expect(imgurUrlParser('http://imgur.com/gallery/59npG')).toBe(
+  expect(imgurUrlParser('http://imgur.com/gallery/59npG')).toEqual(
     results.gallery,
   );
 });
 
 test('Should work with a single image', () => {
-  expect(imgurUrlParser('http://imgur.com/OzZUNMM')).toBe(results.image);
+  expect(imgurUrlParser('http://imgur.com/OzZUNMM')).toEqual(results.image);
 });
 
 test('Should work with a single image (direct link)', () => {
-  expect(imgurUrlParser('http://i.imgur.com/altd8Ld.png')).toBe(
+  expect(imgurUrlParser('http://i.imgur.com/altd8Ld.png')).toEqual(
     results.directImage,
   );
 });
 
 test("Should work with /zip at the end (Yeah it's a real thing!)", () => {
-  expect(imgurUrlParser('http://imgur.com/a/cjh4E/zip')).toBe(results.album);
+  expect(imgurUrlParser('http://imgur.com/a/cjh4E/zip')).toEqual(results.album);
 });
 
 test('Should work with a #hash at the end', () => {
-  expect(imgurUrlParser('http://imgur.com/gallery/59npG#g1UvPtF')).toBe(
+  expect(imgurUrlParser('http://imgur.com/gallery/59npG#g1UvPtF')).toEqual(
     results.gallery,
   );
 });
 
 test('Should work with www. instead of http://', () => {
-  expect(imgurUrlParser('www.i.imgur.com/altd8Ld.png')).toBe(
+  expect(imgurUrlParser('www.i.imgur.com/altd8Ld.png')).toEqual(
     results.directImage,
   );
 });
 
 test('Should work without http:// and www.', () => {
-  expect(imgurUrlParser('i.imgur.com/altd8Ld.png')).toBe(results.directImage);
+  expect(imgurUrlParser('i.imgur.com/altd8Ld.png')).toEqual(
+    results.directImage,
+  );
 });
+
+/imgur.com(?:\/(a)\/)?(?:\/(gallery)\/)?\/?(\w+)/;
